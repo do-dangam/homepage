@@ -22,6 +22,34 @@ npm.cmd run preview
 
 빌드 결과는 `dist/` 폴더에 생성됩니다.
 
+## GitHub Pages 배포
+
+`npm run dev`로 보이는 화면과 GitHub Pages는 **다릅니다**.
+
+- 루트 `index.html`은 Vite 개발용 껍데기입니다 (`<div id="root">`만 있고, React 코드는 `src/`에 있음)
+- GitHub Pages는 **정적 파일만** 서빙하므로, 반드시 **빌드된 `dist/`** 를 배포해야 합니다
+
+### 자동 배포 (권장)
+
+1. 이 저장소를 GitHub에 push
+2. 저장소 **Settings → Pages → Build and deployment**
+   - Source: **GitHub Actions**
+3. `main`(또는 `master`) 브랜치에 push하면 `.github/workflows/deploy.yml`이 자동으로 빌드·배포
+
+접속 URL 예시:
+- 저장소 이름이 `homepage`인 경우: `https://사용자이름.github.io/homepage/`
+- 저장소 이름이 `사용자이름.github.io`인 경우: `https://사용자이름.github.io/`
+
+### 수동 빌드 (로컬)
+
+저장소 이름이 `homepage`라면:
+
+```bash
+npm.cmd run build -- --base=/homepage/
+```
+
+그다음 `dist/` 폴더 **안의 파일들**을 GitHub Pages에 올립니다 (소스 전체가 아님).
+
 ## 페이지 구성
 
 - **히어로** — 회사 소개 및 핵심 수치

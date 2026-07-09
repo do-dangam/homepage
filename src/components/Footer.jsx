@@ -1,3 +1,5 @@
+import { asset } from '../utils/asset'
+
 export default function Footer() {
   return (
     <footer className="bg-corp-text text-white">
@@ -5,7 +7,7 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="lg:col-span-2">
             <div className="inline-block bg-white rounded px-4 py-2">
-              <img src="/logo.png" alt="하이텍" className="h-8 w-auto object-contain" />
+              <img src={asset('logo.png')} alt="하이텍" className="h-8 w-auto object-contain" />
             </div>
             <p className="mt-5 text-sm text-white/60 leading-relaxed max-w-sm">
               젠다이 · 포켓도어 · 커텐박스 설계 · 제작 · 납품 전문 기업.

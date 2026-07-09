@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import LogoMark from './LogoMark'
+import { asset } from '../utils/asset'
 
 const navLinks = [
   { href: '#about', label: '회사소개' },
@@ -22,7 +23,7 @@ export default function Header({ scrolled, onHero = true }) {
       <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 lg:px-10">
         <a href="#" className="flex items-center gap-3 group">
           {light ? (
-            <img src="/logo.png" alt="하이텍" className="h-9 w-auto object-contain" />
+            <img src={asset('logo.png')} alt="하이텍" className="h-9 w-auto object-contain" />
           ) : (
             <>
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 border border-white/20">

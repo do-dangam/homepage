@@ -1,8 +1,12 @@
 import Breadcrumb from './Breadcrumb'
+import { asset } from '../utils/asset'
 
 export default function Hero() {
   return (
-    <section className="hero-corp">
+    <section
+      className="hero-corp"
+      style={{ '--hero-image': `url("${asset('company.jpg')}")` }}
+    >
       <div className="relative z-10 w-full mx-auto max-w-[1280px] px-6 lg:px-10 pt-32 pb-16 lg:pb-24">
         <div className="animate-fade-up">
           <Breadcrumb
